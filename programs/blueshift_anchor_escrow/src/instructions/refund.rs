@@ -11,7 +11,7 @@ pub struct Refund<'info> {
         close = maker,
         seeds = [b"escrow", escrow.maker.as_ref(), escrow.seed.to_le_bytes().as_ref()],
         bump = escrow.bump,
-        constraint = escrow.maker == maker.key() @ crate::errors::EscrowError::Unauthorized
+        constraint = escrow.maker == maker.key() @ crate::errors::EscrowError::InvalidMaker
     )]
     pub escrow: Account<'info, Escrow>,
 }

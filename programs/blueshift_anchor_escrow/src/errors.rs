@@ -4,13 +4,10 @@ use anchor_lang::prelude::*;
 pub enum EscrowError {
     #[msg("Invalid amount")]
     InvalidAmount,
-
-    #[msg("Invalid receive amount")]
-    InvalidReceive,
-
-    #[msg("Escrow not found or expired")]
-    EscrowNotFound,
-
-    #[msg("Unauthorized")]
-    Unauthorized,
+    #[msg("Invalid maker")]
+    InvalidMaker,
+    #[msg("Invalid mint a")]
+    InvalidMintA,
+    #[msg("Invalid mint b")]
+    InvalidMintB,
 }
