@@ -31,7 +31,8 @@ pub struct Refund<'info> {
     )]
     pub vault: InterfaceAccount<'info, TokenAccount>,
     #[account(
-        mut,
+        init_if_needed,
+        payer = maker,
         associated_token::mint = mint_a,
         associated_token::authority = maker,
         associated_token::token_program = token_program
